@@ -5,7 +5,7 @@ from database import Base
 class House(Base):
     __tablename__ = 'houses'
 
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     title = Column(String, index=True)
     walink = Column(String)
     type = Column(String)
