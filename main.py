@@ -3,6 +3,8 @@ from sqlalchemy.orm import Session
 from . import models, schemas, crud
 from .database import engine, SessionLocal
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+from typing import List
 
 app = FastAPI()
 
@@ -26,7 +28,7 @@ def get_db():
         db.close()
 
 @app.get("/houses", response_model=List[schemas.House])
-def read_houses(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+def get_houses(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     houses = crud.get_houses(db)
     return houses
 
