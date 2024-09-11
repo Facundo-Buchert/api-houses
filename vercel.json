@@ -7,6 +7,6 @@
     { "src": "/(.*)", "dest": "main.py" }
   ],
   "env": {
-    "DATABASE_URL": "postgresql://postgres:UDmnXVvrQvxabWCTQzSzoHKTIwvaGDVM@meticulous-empathy.railway.internal:5432/railway"
+    "DATABASE_URL": "@database_url"
   }
 }
